@@ -29,6 +29,14 @@ struct PeopleListView: View {
                         }
                     }
                 }
+                Section("Contacts") {
+                    ForEach(studentsSorted) { person in
+                        NavigationLink(destination: PersonDetailView(person: person)) {
+                            PersonRowView(person: person)
+                        }
+                    }
+                }
+                
             }
             .navigationTitle("Directory")
         }
